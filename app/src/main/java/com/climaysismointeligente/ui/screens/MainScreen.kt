@@ -31,6 +31,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.compose.ui.platform.LocalContext
+import com.climaysismointeligente.BuildConfig
 
 fun showFrostNotification(context: Context) {
     val channelId = "frost_alert"
@@ -64,8 +65,8 @@ fun MainScreen(navController: NavController) {
     var loading by remember { mutableStateOf(true) }
     var error by remember { mutableStateOf<String?>(null) }
 
-    // API Key de OpenWeatherMap (reemplaza por la tuya)
-    val weatherApiKey = "b4623b161010489298c194725250907"
+    // API Key de WeatherAPI (ahora se obtiene de BuildConfig)
+    val weatherApiKey = BuildConfig.WEATHER_API_KEY
     val city = "Ayacucho"
 
     val context = LocalContext.current
